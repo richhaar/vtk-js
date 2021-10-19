@@ -1,5 +1,5 @@
 import { vtkAlgorithm, vtkObject } from "../../../interfaces";
-import { Vector3 } from "../../../types";
+import { Vector2, Vector3 } from "../../../types";
 
 /**
  *
@@ -245,7 +245,7 @@ export interface vtkOpenGLRenderWindow extends vtkOpenGLRenderWindowBase {
 	 * @param value 
 	 */
 	setUseBackgroundImage(value : boolean): void;
-
+	 setUseBackgroundImage(value : boolean): void;
 	/**
 	 * Capture a screenshot of the contents of this renderwindow.  The options
 	 * object can include a `size` array (`[w, h]`) or a `scale` floating point
@@ -297,6 +297,40 @@ export interface vtkOpenGLRenderWindow extends vtkOpenGLRenderWindowBase {
 	 * @param stream 
 	 */
 	setViewStream(stream : any): boolean;
+
+	/**
+	 * 
+	 * @param size 
+	 */
+	 setSize(size : Vector2): void;
+
+	/**
+	 * 
+	 * @param size 
+	 */
+	 setSize(x : number, y : number): void;
+
+	/**
+	 * 
+	 */
+	 getSize(): Vector2;
+
+	/**
+	 * 
+	 * @param size 
+	 */
+	 setVrResolution(size : Vector2): void;
+
+	/**
+	 * 
+	 * @param size 
+	 */
+	 setVrResolution(x : number, y : number): void;
+
+	/**
+	 * 
+	 */
+	 getVrResolution(): Vector2;
 }
 
 /**
